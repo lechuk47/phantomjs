@@ -107,7 +107,8 @@ CookieJar *CookieJar::instance(QString cookiesFile)
 CookieJar::~CookieJar()
 {
     // On destruction, before saving, clear all the session cookies
-    purgeSessionCookies();
+    // Don't delete session cookies at exit
+    //    purgeSessionCookies();
     save();
 }
 
